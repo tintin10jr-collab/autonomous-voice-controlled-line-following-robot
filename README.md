@@ -1,102 +1,82 @@
+
 # Autonomous Voice-Controlled Line-Following Robot
 
-A final-year ECE project focused on building a compact indoor robot that can receive a destination through voice commands, follow a predefined path, and detect obstacles during navigation.
+An autonomous mobile robot that follows a predefined black-line track, accepts voice-based destination input, detects obstacles using LiDAR, and provides audio alerts. An ESP32-based subsystem drives two OLED displays for expressive robot animations.
 
-The robot uses a **Raspberry Pi 4B**, **IR line sensors**, and a **TF02 Pro LiDAR**. It follows a taped path and uses LiDAR-based obstacle detection to stop, provide a voice alert, perform basic avoidance, and continue towards the destination.
+## Project Highlights
 
+- **Line Following:** Three IR sensors detect and track a black line.
+- **Voice-Based Destination Selection:** Choose a destination using voice input.
+- **Obstacle Detection:** TF02 Pro LiDAR measures the distance to obstacles.
+- **Obstacle Handling:** Stops, provides an audio alert, and uses the implemented obstacle-handling logic.
+- **Audio Feedback:** Provides voice alerts and destination notifications.
+- **Animated Robot Face:** An ESP32 controls two 1.3-inch OLED displays for facial expressions. The ESP32 currently operates separately from the Raspberry Pi.
 
-## Project Gallery
+## System Architecture
 
-### Robot — Front View
-![Robot Front View](images/robot-front.png.jpeg)
+See [System Architecture](docs/system-architecture.md) for the system diagram and controller responsibilities.
 
-### Complete Hardware
-![Robot Hardware Full View](images/robot-hardware-fullview.png.jpeg)
+## Hardware Components
 
-### Side View
-![Robot Side View](images/robot-side.png.jpeg)
+| Component | Purpose |
+|---|---|
+| Raspberry Pi 4B | Main robot controller |
+| ESP32 DevKit | OLED facial-expression controller |
+| 2 × 1.3-inch OLED displays | Robot face and expressions |
+| 3 × TCRT5000 IR sensors | Line detection |
+| TF02 Pro LiDAR | Obstacle-distance measurement |
+| 2 × L298N motor drivers | Motor control |
+| 4 × DC geared motors | Robot movement |
 
-### Hardware and Wiring
-![Robot Hardware](images/robot-hardware.png.jpeg)
+## Robot Photos
 
-### IR Line Sensor
-![IR Sensor Setup](images/robot-hardware-irsensor.png.jpeg)
+### Complete Robot
 
-### TF02 Pro LiDAR
+![Robot hardware](images/robot-hardware.png.jpeg)
+
+![Full robot view](images/robot-hardware-fullview.png.jpeg)
+
+### Hardware Details
+
+![Side view](images/robot-side.png.jpeg)
+
+![Additional hardware view](images/robot-hardware2.png.jpeg)
+
+![IR sensor installation](images/robot-hardware-irsensor.png.jpeg)
+
+### LiDAR Sensor
+
 ![TF02 Pro LiDAR](images/tf02-pro-lydar.png.jpeg)
 
-### Additional Hardware View
-![Robot Hardware Detail](images/robot-hardware2.png.jpeg)
+### Front View
 
-## Key Features
+![Robot front view](images/robot-front.png.jpeg)
 
-* Voice-based destination selection
-* IR sensor-based line following
-* TF02 Pro LiDAR-based obstacle detection
-* DC motor and motor-driver control
-* Voice alerts during navigation
-* Predefined indoor route navigation
-
-## Hardware
-
-* Raspberry Pi 4B
-* TF02 Pro LiDAR
-* 3 × IR line sensors
-* L298N motor drivers
-* 4 × DC geared motors
-* Robot chassis
-
-## Software
-
-* Python
-* Raspberry Pi OS
-* Speech-to-Text
-* Text-to-Speech
-
-## System Flow
+## Repository Structure
 
 ```text
-Voice Command
-      ↓
-Select Destination
-      ↓
-Follow Line using IR Sensors
-      ↓
-Monitor Obstacles using LiDAR
-      ↓
-Obstacle Detected
-      ↓
-Stop → Voice Alert → Basic Avoidance
-      ↓
-Continue Following Path
-      ↓
-Reach Destination → Voice Alert
+autonomous-voice-controlled-line-following-robot/
+├── docs/
+│   ├── system-flow.md
+│   └── system-architecture.md
+├── hardware/
+│   └── pinout.md
+├── images/
+├── src/
+│   ├── audio.py
+│   ├── displaytest.py
+│   ├── line_follower.py
+│   ├── main.py
+│   ├── motors.py
+│   ├── obstacle_test.py
+│   ├── robot.py
+│   └── requirements.txt
+└── README.md
 ```
 
-## My Contributions
+## Team
 
-* Developed Raspberry Pi-based robot control
-* Integrated IR sensors for line following
-* Integrated TF02 Pro LiDAR for obstacle detection
-* Worked on motor and motor-driver control
-* Implemented voice-based destination selection
-* Integrated voice alerts with robot navigation
-* Tested and integrated the different hardware and software modules
-
-## Current Version
-
-The current prototype operates on a **predefined indoor path**. The main focus is reliable integration of voice control, line following, obstacle detection, motor control, and basic navigation.
-
-## Future Improvements
-
-* Improve obstacle avoidance
-* Support more flexible routes
-* Improve voice recognition in noisy environments
-* Add additional sensors for navigation
-* Explore advanced autonomous navigation techniques
-
-## Project Status
-
-**Final Year Major Project | 2025–2026**
-
-**Team:** D. Kavya · Donthi Sai Preethi · S. Nitin · D. Jonathan
+- D. Kavya
+- Donthi Sai Preethi
+- S. Nitin
+- D. Jonathan
