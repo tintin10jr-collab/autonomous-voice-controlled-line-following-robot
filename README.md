@@ -4,6 +4,30 @@ A final-year ECE project focused on building a compact indoor robot that can rec
 
 The robot uses a **Raspberry Pi 4B**, **IR line sensors**, and a **TF02 Pro LiDAR**. It follows a taped path and uses LiDAR-based obstacle detection to stop, provide a voice alert, perform basic avoidance, and continue towards the destination.
 
+
+## Project Gallery
+
+### Robot — Front View
+![Robot Front View](images/robot-front.png.jpeg)
+
+### Complete Hardware
+![Robot Hardware Full View](images/robot-hardware-fullview.png.jpeg)
+
+### Side View
+![Robot Side View](images/robot-side.png.jpeg)
+
+### Hardware and Wiring
+![Robot Hardware](images/robot-hardware.png.jpeg)
+
+### IR Line Sensor
+![IR Sensor Setup](images/robot-hardware-irsensor.png.jpeg)
+
+### TF02 Pro LiDAR
+![TF02 Pro LiDAR](images/tf02-pro-lydar.png.jpeg)
+
+### Additional Hardware View
+![Robot Hardware Detail](images/robot-hardware2.png.jpeg)
+
 ## Key Features
 
 * Voice-based destination selection
