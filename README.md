@@ -52,6 +52,18 @@ See [System Architecture](docs/system-architecture.md) for the system diagram an
 
 ![Robot front view](images/robot-front.png.jpeg)
 
+
+## Robot Demonstration Videos
+
+### Robot Movement and Response
+
+[Watch the robot movement video](videos/robot-movement.mp4)
+
+### OLED Eye-Blinking Animation
+
+[Watch the OLED eye animation](videos/oled-eye-blinking.mp4)
+
+
 ## Repository Structure
 
 ```text
